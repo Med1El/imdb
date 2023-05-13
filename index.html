@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6E27YGBE87"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-6E27YGBE87');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMDb Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container c-container">
+        <h2 class="center-align title"><img class="logo" class="responsive-img" src="img/logo.png"></img><span>Advanced
+                Search</span></h2>
+        <div class="row">
+            <form id="search-form">
+                <!-- div start -->
+                <div id="sub-form-1" class="col s6 pm-0">
+
+                    <div id="type-div" class="sub-div input-field col s4">
+                        <select id="types-input" multiple>
+                            <option value="" disabled>Select Types</option>
+                            <option value="feature">Feature Film</option>
+                            <option value="tv_movie">TV Movie</option>
+                            <option value="tv_series">TV Series</option>
+                            <option value="tv_episode">TV Episode</option>
+                            <option value="tv_special">TV Special</option>
+                            <option value="tv_miniseries">TV Mini-Series</option>
+                            <option value="documentary">Documentary</option>
+                            <option value="video_game">Video Game</option>
+                            <option value="short">Short Film</option>
+                            <option value="video">Video</option>
+                            <option value="tv_short">TV Short</option>
+                            <option value="podcast_series">Podcast Series</option>
+                            <option value="podcast_episode">Podcast Episode</option>
+                            <option value="music_video">Music Video</option>
+                        </select>
+                        <label for="types-input" class="select-label">Title Type</label>
+                    </div>
+
+                    <div id="date-div" class="sub-div col s4 relative border">
+                        <label class="float-lab">Release Date</label>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="year-from-input" type="number" min="1900" max="2023" list="years"
+                                    class="validate">
+                                <label for="year-from-input">From</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="year-to-input" type="number" min="1900" max="2023" list="years"
+                                    class="validate ">
+                                <label for="year-to-input">To</label>
+                            </div>
+                        </div>
+                        <datalist id="years">
+                            <option value="2023"></option>
+                            <option value="2020"></option>
+                            <option value="2010"></option>
+                            <option value="2000"></option>
+                            <option value="1990"></option>
+                            <option value="1980"></option>
+                            <option value="1970"></option>
+                            <option value="1960"></option>
+                            <option value="1950"></option>
+                            <option value="1940"></option>
+                            <option value="1930"></option>
+                            <option value="1920"></option>
+                            <option value="1910"></option>
+                            <option value="1900"></option>
+                        </datalist>
+                    </div>
+
+
+                    <div id="rating-div" class="sub-div col s4 relative border">
+                        <label class="float-lab">Users Rating</label>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="user-rating-from" type="number" step="1" min="1" max="10" list="ratings"
+                                    class="validate">
+                                <label for="user-rating-from">From</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="user-rating-to" type="number" step="1" min="1" max="10" list="ratings"
+                                    class="validate">
+                                <label for="user-rating-to">To</label>
+                            </div>
+                        </div>
+                        <datalist id="ratings">
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </datalist>
+                    </div>
+
+                </div>
+
+                <div id="sub-form-2" class="col s6 pm-0">
+
+                    <div id="genre-div" class="sub-div input-field col s4">
+                        <select id="genres-input" multiple>
+                            <option value="" disabled>Select Genres</option>
+                            <option value="action">Action</option>
+                            <option value="adventure">Adventure</option>
+                            <option value="animation">Animation</option>
+                            <option value="biography">Biography</option>
+                            <option value="comedy">Comedy</option>
+                            <option value="crime">Crime</option>
+                            <option value="documentary">Documentary</option>
+                            <option value="drama">Drama</option>
+                            <option value="family">Family</option>
+                            <option value="fantasy">Fantasy</option>
+                            <option value="film-noir">Film-Noir</option>
+                            <option value="game-show">Game-Show</option>
+                            <option value="history">History</option>
+                            <option value="horror">Horror</option>
+                            <option value="music">Music</option>
+                            <option value="musical">Musical</option>
+                            <option value="mystery">Mystery</option>
+                            <option value="news">News</option>
+                            <option value="reality-tv">Reality-TV</option>
+                            <option value="romance">Romance</option>
+                            <option value="sci-fi">Sci-Fi</option>
+                            <option value="sport">Sport</option>
+                            <option value="talk-show">Talk-Show</option>
+                            <option value="thriller">Thriller</option>
+                            <option value="war">War</option>
+                            <option value="western">Western</option>
+                        </select>
+                        <label for="genres-input" class="select-label">Genre</label>
+                    </div>
+
+                    <div id="vote-div" class="sub-div col s4 relative border">
+                        <label class="float-lab">Number of Votes</label>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="votes-from-input" type="number" step="20000" value="20000">
+                                <label for="votes-from-input">From</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="votes-to-input" type="number" step="20000">
+                                <label for="votes-to-input">To</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="lang-div" class="sub-div input-field col s4">
+                        <select id="langs-input" multiple>
+                            <option value="" disabled hidden="true">Select Languages</option>
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                            <option value="ar">Arabic</option>
+                            <option value="ja">Japanese</option>
+                            <option value="de">German</option>
+                            <option value="" disabled>
+                                <p class="arrow">↓</p> Alphabetical
+                            </option>
+                            <option value="ab">Abkhazian</option>
+                            <option value="qac">Aboriginal</option>
+                            <option value="guq">Aché</option>
+                            <option value="qam">Acholi</option>
+                            <option value="af">Afrikaans</option>
+                            <option value="qas">Aidoukrou</option>
+                            <option value="ak">Akan</option>
+                            <option value="sq">Albanian</option>
+                            <option value="ale">Aleut</option>
+                            <option value="alg">Algonquin</option>
+                            <option value="ase">American Sign Language</option>
+                            <option value="am">Amharic</option>
+                            <option value="apa">Apache languages</option>
+                            <option value="ar">Arabic</option>
+                            <option value="an">Aragonese</option>
+                            <option value="arc">Aramaic</option>
+                            <option value="arp">Arapaho</option>
+                            <option value="aqc">Archi</option>
+                            <option value="hy">Armenian</option>
+                            <option value="as">Assamese</option>
+                            <option value="asb">Assiniboine</option>
+                            <option value="aii">Assyrian Neo-Aramaic</option>
+                            <option value="ath">Athapascan languages</option>
+                            <option value="asf">Australian Sign Language</option>
+                            <option value="awa">Awadhi</option>
+                            <option value="ay">Aymara</option>
+                            <option value="az">Azerbaijani</option>
+                            <option value="ast">Bable</option>
+                            <option value="qbd">Baka</option>
+                            <option value="ban">Balinese</option>
+                            <option value="bm">Bambara</option>
+                            <option value="ba">Bashkir</option>
+                            <option value="eu">Basque</option>
+                            <option value="bsc">Bassari</option>
+                            <option value="be">Belarusian</option>
+                            <option value="bem">Bemba</option>
+                            <option value="bn">Bengali</option>
+                            <option value="ber">Berber languages</option>
+                            <option value="bho">Bhojpuri</option>
+                            <option value="qbi">Bicolano</option>
+                            <option value="qbh">Bodo</option>
+                            <option value="bfw">Bonda</option>
+                            <option value="bs">Bosnian</option>
+                            <option value="bzs">Brazilian Sign Language</option>
+                            <option value="br">Breton</option>
+                            <option value="bfi">British Sign Language</option>
+                            <option value="bg">Bulgarian</option>
+                            <option value="my">Burmese</option>
+                            <option value="bsk">Burushaski</option>
+                            <option value="yue">Cantonese</option>
+                            <option value="ca">Catalan</option>
+                            <option value="km">Central Khmer</option>
+                            <option value="ccp">Chakma</option>
+                            <option value="qax">Chaozhou</option>
+                            <option value="ce">Chechen</option>
+                            <option value="chr">Cherokee</option>
+                            <option value="chy">Cheyenne</option>
+                            <option value="hne">Chhattisgarhi</option>
+                            <option value="zh">Chinese</option>
+                            <option value="ckt">Chukchi</option>
+                            <option value="kw">Cornish</option>
+                            <option value="co">Corsican</option>
+                            <option value="cr">Cree</option>
+                            <option value="mus">Creek</option>
+                            <option value="hr">Croatian</option>
+                            <option value="cro">Crow</option>
+                            <option value="cs">Czech</option>
+                            <option value="da">Danish</option>
+                            <option value="prs">Dari</option>
+                            <option value="dso">Desiya</option>
+                            <option value="din">Dinka</option>
+                            <option value="qaw">Djerma</option>
+                            <option value="doi">Dogri</option>
+                            <option value="nl">Dutch</option>
+                            <option value="dyu">Dyula</option>
+                            <option value="dz">Dzongkha</option>
+                            <option value="qbc">East-Greenlandic</option>
+                            <option value="frs">Eastern Frisian</option>
+                            <option value="egy">Egyptian (Ancient)</option>
+                            <option value="en">English</option>
+                            <option value="eo">Esperanto</option>
+                            <option value="et">Estonian</option>
+                            <option value="ee">Ewe</option>
+                            <option value="qbg">Faliasch</option>
+                            <option value="fo">Faroese</option>
+                            <option value="fil">Filipino</option>
+                            <option value="fi">Finnish</option>
+                            <option value="qbn">Flemish</option>
+                            <option value="fon">Fon</option>
+                            <option value="fr">French</option>
+                            <option value="fsl">French Sign Language</option>
+                            <option value="fur">Friulian</option>
+                            <option value="ff">Fulah</option>
+                            <option value="fvr">Fur</option>
+                            <option value="gd">Gaelic</option>
+                            <option value="gl">Galician</option>
+                            <option value="ka">Georgian</option>
+                            <option value="de">German</option>
+                            <option value="gsg">German Sign Language</option>
+                            <option value="grb">Grebo</option>
+                            <option value="el">Greek</option>
+                            <option value="grc">Greek, Ancient (to 1453)</option>
+                            <option value="kl">Greenlandic</option>
+                            <option value="gn">Guarani</option>
+                            <option value="gu">Gujarati</option>
+                            <option value="gnn">Gumatj</option>
+                            <option value="gup">Gunwinggu</option>
+                            <option value="gbj">Gutob</option>
+                            <option value="ht">Haitian</option>
+                            <option value="hai">Haida</option>
+                            <option value="hak">Hakka</option>
+                            <option value="bgc">Haryanvi</option>
+                            <option value="qav">Hassanya</option>
+                            <option value="ha">Hausa</option>
+                            <option value="haw">Hawaiian</option>
+                            <option value="he">Hebrew</option>
+                            <option value="hi">Hindi</option>
+                            <option value="hmn">Hmong</option>
+                            <option value="hoc">Ho</option>
+                            <option value="qab">Hokkien</option>
+                            <option value="hop">Hopi</option>
+                            <option value="hu">Hungarian</option>
+                            <option value="iba">Iban</option>
+                            <option value="qag">Ibo</option>
+                            <option value="is">Icelandic</option>
+                            <option value="icl">Icelandic Sign Language</option>
+                            <option value="ins">Indian Sign Language</option>
+                            <option value="id">Indonesian</option>
+                            <option value="iu">Inuktitut</option>
+                            <option value="ik">Inupiaq</option>
+                            <option value="ga">Irish Gaelic</option>
+                            <option value="iru">Irula</option>
+                            <option value="it">Italian</option>
+                            <option value="ja">Japanese</option>
+                            <option value="jsl">Japanese Sign Language</option>
+                            <option value="dyo">Jola-Fonyi</option>
+                            <option value="ktz">Ju'hoan</option>
+                            <option value="qbf">Kaado</option>
+                            <option value="kea">Kabuverdianu</option>
+                            <option value="kab">Kabyle</option>
+                            <option value="xal">Kalmyk-Oirat</option>
+                            <option value="kn">Kannada</option>
+                            <option value="kpj">Karajá</option>
+                            <option value="mjw">Karbi</option>
+                            <option value="kar">Karen</option>
+                            <option value="kk">Kazakh</option>
+                            <option value="kca">Khanty</option>
+                            <option value="kha">Khasi</option>
+                            <option value="ki">Kikuyu</option>
+                            <option value="rw">Kinyarwanda</option>
+                            <option value="qar">Kirundi</option>
+                            <option value="tlh">Klingon</option>
+                            <option value="kfa">Kodava</option>
+                            <option value="trp">Kokborok</option>
+                            <option value="kok">Konkani</option>
+                            <option value="ko">Korean</option>
+                            <option value="kvk">Korean Sign Language</option>
+                            <option value="khe">Korowai</option>
+                            <option value="qaq">Kriolu</option>
+                            <option value="kro">Kru</option>
+                            <option value="kyw">Kudmali</option>
+                            <option value="qbb">Kuna</option>
+                            <option value="ku">Kurdish</option>
+                            <option value="kgg">Kusunda</option>
+                            <option value="kwk">Kwakiutl</option>
+                            <option value="ky">Kyrgyz</option>
+                            <option value="lbj">Ladakhi</option>
+                            <option value="lad">Ladino</option>
+                            <option value="lo">Lao</option>
+                            <option value="la">Latin</option>
+                            <option value="lv">Latvian</option>
+                            <option value="lif">Limbu</option>
+                            <option value="ln">Lingala</option>
+                            <option value="lt">Lithuanian</option>
+                            <option value="nds">Low German</option>
+                            <option value="lb">Luxembourgish</option>
+                            <option value="mk">Macedonian</option>
+                            <option value="qbm">Macro-Jê</option>
+                            <option value="mag">Magahi</option>
+                            <option value="mai">Maithili</option>
+                            <option value="mg">Malagasy</option>
+                            <option value="ms">Malay</option>
+                            <option value="ml">Malayalam</option>
+                            <option value="pqm">Malecite-Passamaquoddy</option>
+                            <option value="qap">Malinka</option>
+                            <option value="mt">Maltese</option>
+                            <option value="mnc">Manchu</option>
+                            <option value="cmn">Mandarin</option>
+                            <option value="man">Mandingo</option>
+                            <option value="mni">Manipuri</option>
+                            <option value="mi">Maori</option>
+                            <option value="arn">Mapudungun</option>
+                            <option value="mr">Marathi</option>
+                            <option value="mh">Marshallese</option>
+                            <option value="mas">Masai</option>
+                            <option value="mls">Masalit</option>
+                            <option value="myn">Maya</option>
+                            <option value="men">Mende</option>
+                            <option value="mic">Micmac</option>
+                            <option value="enm">Middle English</option>
+                            <option value="nan">Min Nan</option>
+                            <option value="min">Minangkabau</option>
+                            <option value="mwl">Mirandese</option>
+                            <option value="qmt">Mixtec</option>
+                            <option value="lus">Mizo</option>
+                            <option value="moh">Mohawk</option>
+                            <option value="mn">Mongolian</option>
+                            <option value="moe">Montagnais</option>
+                            <option value="qaf">More</option>
+                            <option value="mfe">Morisyen</option>
+                            <option value="qbl">Nagpuri</option>
+                            <option value="nah">Nahuatl</option>
+                            <option value="qba">Nama</option>
+                            <option value="nv">Navajo</option>
+                            <option value="nbf">Naxi</option>
+                            <option value="nd">Ndebele</option>
+                            <option value="nap">Neapolitan</option>
+                            <option value="yrk">Nenets</option>
+                            <option value="ne">Nepali</option>
+                            <option value="ncg">Nisga'a</option>
+                            <option value="zxx">None</option>
+                            <option value="non">Norse, Old</option>
+                            <option value="nai">North American Indian</option>
+                            <option value="no">Norwegian</option>
+                            <option value="qbk">Nushi</option>
+                            <option value="nyk">Nyaneka</option>
+                            <option value="ny">Nyanja</option>
+                            <option value="oc">Occitan</option>
+                            <option value="oj">Ojibwa</option>
+                            <option value="qaz">Ojihimba</option>
+                            <option value="ang">Old English</option>
+                            <option value="or">Oriya</option>
+                            <option value="pap">Papiamento</option>
+                            <option value="qaj">Parsee</option>
+                            <option value="ps">Pashtu</option>
+                            <option value="paw">Pawnee</option>
+                            <option value="fa">Persian</option>
+                            <option value="qai">Peul</option>
+                            <option value="myp">Pirahã</option>
+                            <option value="pl">Polish</option>
+                            <option value="qah">Polynesian</option>
+                            <option value="pt">Portuguese</option>
+                            <option value="fuf">Pular</option>
+                            <option value="pa">Punjabi</option>
+                            <option value="tsz">Purepecha</option>
+                            <option value="qu">Quechua</option>
+                            <option value="qya">Quenya</option>
+                            <option value="raj">Rajasthani</option>
+                            <option value="qbj">Rawan</option>
+                            <option value="xrr">Rhaetian</option>
+                            <option value="ro">Romanian</option>
+                            <option value="rm">Romansh</option>
+                            <option value="rom">Romany</option>
+                            <option value="rtm">Rotuman</option>
+                            <option value="ru">Russian</option>
+                            <option value="rsl">Russian Sign Language</option>
+                            <option value="qao">Ryukyuan</option>
+                            <option value="qae">Saami</option>
+                            <option value="sm">Samoan</option>
+                            <option value="sa">Sanskrit</option>
+                            <option value="sat">Santali</option>
+                            <option value="sc">Sardinian</option>
+                            <option value="qay">Scanian</option>
+                            <option value="sr">Serbian</option>
+                            <option value="qbo">Serbo-Croatian</option>
+                            <option value="srr">Serer</option>
+                            <option value="qad">Shanghainese</option>
+                            <option value="qau">Shanxi</option>
+                            <option value="shp">Shipibo</option>
+                            <option value="sn">Shona</option>
+                            <option value="shh">Shoshoni</option>
+                            <option value="scn">Sicilian</option>
+                            <option value="qsg">Silbo Gomero</option>
+                            <option value="sjn">Sindarin</option>
+                            <option value="sd">Sindhi</option>
+                            <option value="si">Sinhala</option>
+                            <option value="sio">Sioux</option>
+                            <option value="sk">Slovak</option>
+                            <option value="sl">Slovenian</option>
+                            <option value="so">Somali</option>
+                            <option value="son">Songhay</option>
+                            <option value="snk">Soninke</option>
+                            <option value="wen">Sorbian languages</option>
+                            <option value="st">Sotho</option>
+                            <option value="qbe">Sousson</option>
+                            <option value="es">Spanish</option>
+                            <option value="ssp">Spanish Sign Language</option>
+                            <option value="srn">Sranan</option>
+                            <option value="sw">Swahili</option>
+                            <option value="sv">Swedish</option>
+                            <option value="gsw">Swiss German</option>
+                            <option value="syl">Sylheti</option>
+                            <option value="nmn">Taa</option>
+                            <option value="tl">Tagalog</option>
+                            <option value="tg">Tajik</option>
+                            <option value="tmh">Tamashek</option>
+                            <option value="ta">Tamil</option>
+                            <option value="tac">Tarahumara</option>
+                            <option value="tt">Tatar</option>
+                            <option value="te">Telugu</option>
+                            <option value="qak">Teochew</option>
+                            <option value="th">Thai</option>
+                            <option value="bo">Tibetan</option>
+                            <option value="qan">Tigrigna</option>
+                            <option value="tli">Tlingit</option>
+                            <option value="tpi">Tok Pisin</option>
+                            <option value="to">Tonga (Tonga Islands)</option>
+                            <option value="ts">Tsonga</option>
+                            <option value="tsc">Tswa</option>
+                            <option value="tn">Tswana</option>
+                            <option value="tcy">Tulu</option>
+                            <option value="tup">Tupi</option>
+                            <option value="tr">Turkish</option>
+                            <option value="tk">Turkmen</option>
+                            <option value="tyv">Tuvinian</option>
+                            <option value="tue">Tuyuca</option>
+                            <option value="tzo">Tzotzil</option>
+                            <option value="uk">Ukrainian</option>
+                            <option value="ukl">Ukrainian Sign Language</option>
+                            <option value="qat">Ungwatsi</option>
+                            <option value="ur">Urdu</option>
+                            <option value="uz">Uzbek</option>
+                            <option value="vi">Vietnamese</option>
+                            <option value="qaa">Visayan</option>
+                            <option value="was">Washoe</option>
+                            <option value="cy">Welsh</option>
+                            <option value="wo">Wolof</option>
+                            <option value="xh">Xhosa</option>
+                            <option value="sah">Yakut</option>
+                            <option value="yap">Yapese</option>
+                            <option value="yi">Yiddish</option>
+                            <option value="yo">Yoruba</option>
+                            <option value="ypk">Yupik</option>
+                            <option value="zu">Zulu</option>
+                        </select>
+                        <label for="langs-input" class="select-label">Language</label>
+                    </div>
+
+                </div>
+
+
+            </form>
+        </div>
+        <div class="row">
+            <div class="input-field col s12 flex-container">
+                <button id="search-btn" class="btn c-btn waves-effect" type="submit"><i
+                        class="material-icons search-icon">search</i> Search</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

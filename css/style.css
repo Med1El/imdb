@@ -1,0 +1,266 @@
+.c-container {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.title {
+    margin-top: 50px !important;
+    margin-bottom: 130px !important;
+}
+
+.title > span {
+    font-size: 42px;
+    margin-left: 20px;
+}
+
+.logo {
+    position: relative;
+    top: 10px;
+    height: 50px;
+    width: 130px;
+}
+
+.select-dropdown {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    border-bottom: 3px solid #F5C518 !important;
+    border-right: 1px solid #F5C518 !important;
+    border-radius: 5px !important;
+    text-align: center;
+    padding: 0px;
+    background-color: aliceblue;
+}
+
+.select-dropdown > li {
+    background-color: aliceblue !important;
+    min-height: min-content;
+    padding: 0px;
+}
+
+
+.select-dropdown > li > span {
+    padding-top: 5px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 5px;
+}
+
+.dropdown-content {
+    width: 110% !important;
+    left: -10px !important;
+    top: 40px !important;
+    max-height: 50vh !important;
+
+
+}
+
+ul > li:nth-child(1) {
+    display: none !important;
+}
+
+* {
+    -webkit-user-select: none !important; /* Safari */
+    -ms-user-select: none !important; /* IE 10 and IE 11 */
+    user-select: none !important; /* Standard syntax */
+}
+
+
+#lang-div .select-dropdown {
+    width: 101%;
+}
+
+#lang-div svg {
+    right: -6px;
+}
+
+.select-label {
+    position: relative !important;
+    top: -95px !important;
+    left: 25px !important;
+    padding: 10px 20px !important;
+    background-color: #cbeaff !important;
+    color: #F5C518 !important;
+    border-radius: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px !important;
+    font-weight: bold;
+}
+
+.float-lab {
+    float: left;
+    position: absolute;
+    top: -18px;
+    font-size: 18px;
+    background-color: white;
+    padding: 0px 10px;
+    color: #F5C518 !important;
+    font-size: 15px !important;
+    font-weight: bold;
+}
+
+.border {
+    border: 2px solid;
+    border-radius: 3px;
+}
+
+.relative {
+    position: relative;
+}
+
+
+input[type="number"] {
+    font-size: 16px !important;
+    font-weight: 500;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+#rating-div {
+    margin-left: 10px !important;
+}
+
+#type-div {
+    margin-left: -10px !important;
+}
+
+.c-btn {
+    margin-top: 80px;
+    padding: 10px 120px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    height: 60px !important;
+    font-size: 20px;
+    background-color: #d8af1d !important;
+    border-radius: 10px;
+}
+
+
+.c-btn:hover {
+    background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
+
+}
+
+.pm-0 {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.search-icon {
+    position: relative;
+    top: 3px !important;
+}
+
+
+
+@media (max-width: 1000px) {
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title {
+        transform: scale(88%);
+        margin: 0px !important;
+        margin-top: 24px !important;
+    }
+
+    .pm-0 {
+        width: 85% !important;
+    }
+
+    #sub-form-1 {
+        margin-top: 80px !important;
+    }
+
+    #sub-form-2 {
+        margin-top: 80px !important;
+    }
+
+    .c-btn {
+        margin-top: 30px !important;
+    }
+
+    /*
+        label,
+    .select-dropdown {
+        font-weight: 400 !important;
+        font-size: 14px !important;
+        text-align: center;
+    }
+    */
+
+
+
+}
+
+@media (max-width: 600px) {
+
+    .logo {
+        height: 66px;
+        width: 140px;
+    }
+
+    .title > span {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .logo::after {
+        word-wrap: break-word;
+    }
+
+
+    .pm-0 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /*
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        */
+    }
+
+    .pm-0>div {
+        width: 60% !important;
+    }
+
+    #type-div,
+    #date-div,
+    #rating-div,
+    #genre-div,
+    #vote-div,
+    #lang-div {
+        margin: 0 auto !important;
+        margin-bottom: 40px !important;
+    }
+
+
+    .select-label {
+        top: -95px !important;
+        left: 45px !important;
+    }
+
+    #sub-form-2{
+        margin-top: 55px !important;
+    }
+
+    #lang-div {
+        margin-top: 55px !important;
+    }
+
+
+}
+
+@media (min-width: 1200px) {
+    .c-container {
+        width: 80% !important;
+    }
+  }
